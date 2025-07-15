@@ -16,4 +16,8 @@ public class LibraryManager {
     public void addBook(String title, String author) {
         this.library.add(new Book(title, author));
     }
+
+    public String getBookTitleAtPosition(int position) {
+        return library.get(position).getTitle();
+    }
 }

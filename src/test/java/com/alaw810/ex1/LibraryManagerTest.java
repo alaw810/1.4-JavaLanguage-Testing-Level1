@@ -22,4 +22,15 @@ class LibraryManagerTest {
 
         assertEquals(3, library.getLibrary().size());
     }
+
+    @Test
+    void canRetrieveBookTitleByIndex() {
+        LibraryManager library = new LibraryManager();
+        library.addBook("Siddhartha", "Hermann Hesse");
+        library.addBook("Sense and Sensibility", "Jane Austen");
+        library.addBook("Moby-Dick", "Herman Melville");
+
+        String title = library.getBookTitleAtPosition(1);
+        assertEquals("Sense and Sensibility", title);
+    }
 }
