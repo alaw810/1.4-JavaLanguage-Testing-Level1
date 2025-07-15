@@ -10,6 +10,10 @@ public class LibraryManager {
     }
 
     public ArrayList<Book> getLibrary() {
-        return library;
+        return new ArrayList<>(this.library);
+    }
+
+    public void addBook(String title, String author) {
+        this.library.add(new Book(title, author));
     }
 }

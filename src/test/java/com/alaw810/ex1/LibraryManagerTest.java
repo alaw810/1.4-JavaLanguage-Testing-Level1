@@ -12,4 +12,14 @@ class LibraryManagerTest {
         assertNotNull(library.getLibrary());
 
     }
+
+    @Test
+    void libraryHasExpectedSizeAfterAddingBooks() {
+        LibraryManager library = new LibraryManager();
+        library.addBook("Siddhartha", "Hermann Hesse");
+        library.addBook("Sense and Sensibility", "Jane Austen");
+        library.addBook("Moby-Dick", "Herman Melville");
+
+        assertEquals(3, library.getLibrary().size());
+    }
 }
