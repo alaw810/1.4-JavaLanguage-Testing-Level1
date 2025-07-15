@@ -1,6 +1,7 @@
 package com.alaw810.ex1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class LibraryManager {
@@ -21,6 +22,7 @@ public class LibraryManager {
             }
         }
         this.library.add(new Book(title));
+        sortLibrary();
     }
 
     public String getBookTitleAtPosition(int position) {
@@ -46,8 +48,13 @@ public class LibraryManager {
             Book book = it.next();
             if (book.getTitle().equalsIgnoreCase(title)) {
                 it.remove();
+                sortLibrary();
                 return;
             }
         }
+    }
+
+    private void sortLibrary() {
+        Collections.sort(library);
     }
 }
