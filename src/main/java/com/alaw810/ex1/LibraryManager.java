@@ -13,8 +13,13 @@ public class LibraryManager {
         return new ArrayList<>(this.library);
     }
 
-    public void addBook(String title, String author) {
-        this.library.add(new Book(title, author));
+    public void addBook(String title) {
+        for (Book book : library) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return;
+            }
+        }
+        this.library.add(new Book(title));
     }
 
     public String getBookTitleAtPosition(int position) {
