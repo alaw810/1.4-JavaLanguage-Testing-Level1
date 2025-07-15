@@ -53,4 +53,15 @@ class LibraryManagerTest {
 
         assertEquals("Moby-Dick", library.getBookTitleAtPosition(1));
     }
+
+    @Test
+    void canRemoveBooksByTitle() {
+        LibraryManager library = new LibraryManager();
+        library.addBook("Siddhartha");
+        library.addBook("Moby-Dick");
+
+        library.removeBookByTitle("Siddhartha");
+
+        assertEquals(1, library.getLibrary().size());
+    }
 }

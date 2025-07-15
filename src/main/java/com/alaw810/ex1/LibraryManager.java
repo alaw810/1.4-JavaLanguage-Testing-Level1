@@ -1,6 +1,7 @@
 package com.alaw810.ex1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class LibraryManager {
     private ArrayList<Book> library;
@@ -37,5 +38,16 @@ public class LibraryManager {
             }
         }
         this.library.add(position, new Book(title));
+    }
+
+    public void removeBookByTitle(String title) {
+        Iterator<Book> it = library.iterator();
+        while (it.hasNext()) {
+            Book book = it.next();
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                it.remove();
+                return;
+            }
+        }
     }
 }
