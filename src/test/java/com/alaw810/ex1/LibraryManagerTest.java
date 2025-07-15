@@ -42,4 +42,15 @@ class LibraryManagerTest {
 
         assertEquals(1, library.getLibrary().size());
     }
+
+    @Test
+    void canAddBookAtSpecificPosition() {
+        LibraryManager library = new LibraryManager();
+        library.addBook("Siddhartha");
+        library.addBook("Sense and Sensibility");
+
+        library.addBookAtPosition("Moby-Dick",1);
+
+        assertEquals("Moby-Dick", library.getBookTitleAtPosition(1));
+    }
 }

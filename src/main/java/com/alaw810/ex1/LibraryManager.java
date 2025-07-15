@@ -25,4 +25,17 @@ public class LibraryManager {
     public String getBookTitleAtPosition(int position) {
         return library.get(position).getTitle();
     }
+
+    public void addBookAtPosition(String title, int position) {
+        if (position < 0 || position > library.size()) {
+            throw new IllegalArgumentException("Invalid position: " + position);
+        }
+
+        for (Book book : library) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return;
+            }
+        }
+        this.library.add(position, new Book(title));
+    }
 }
