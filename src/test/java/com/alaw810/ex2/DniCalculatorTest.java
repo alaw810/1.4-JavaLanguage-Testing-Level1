@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CalculateDniTest {
+class DniCalculatorTest {
 
     static Stream<Arguments> dniDataProvider() {
         return Stream.of(
@@ -28,8 +28,8 @@ class CalculateDniTest {
 
     @ParameterizedTest
     @MethodSource("dniDataProvider")
-    void testCalculateDniLetter(int dni, char expectedLetter) {
-        char result = CalculateDni.calculateLetter(dni);
+    void shouldReturnCorrectLetterForValidDni(int dniNumber, char expectedLetter) {
+    char result = DniCalculator.calculateLetter(dniNumber);
         assertEquals(expectedLetter, result);
     }
 

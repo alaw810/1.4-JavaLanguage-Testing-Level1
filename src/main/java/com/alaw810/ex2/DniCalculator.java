@@ -1,6 +1,6 @@
 package com.alaw810.ex2;
 
-public class CalculateDni {
+public class DniCalculator {
 
     private static final String LETTERS = "TRWAGMYFPDXBNJZSQVHLCKE";
 
